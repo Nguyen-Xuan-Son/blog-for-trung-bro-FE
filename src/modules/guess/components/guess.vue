@@ -2,8 +2,8 @@
     <div class="hello">
         <h2>Guess</h2>
         <h1>{{ msg }}</h1>
-        <button @click="callApiGet">Call api [GET]</button>
-        <button @click="callApiPost">Call api [POST]</button>
+        <button class="btn btn-success mr-2" @click="callApiGet">Call api [GET]</button>
+        <button class="btn btn-info" @click="callApiPost">Call api [POST]</button>
     </div>
 </template>
 
