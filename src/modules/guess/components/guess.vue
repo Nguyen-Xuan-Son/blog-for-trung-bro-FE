@@ -1,5 +1,6 @@
 <template>
     <div class="hello">
+        <h2>Guess</h2>
         <h1>{{ msg }}</h1>
         <button @click="callApiGet">Call api [GET]</button>
         <button @click="callApiPost">Call api [POST]</button>
@@ -7,7 +8,7 @@
 </template>
 
 <script>
-import { getMethod, postMethod } from './../utils/api-service';
+import { getMethod, postMethod } from './../../../utils/api-service';
 
 export default {
     name: "HelloWorld",
