@@ -1,48 +1,28 @@
-import axios from 'axios';
-
+import axiosConfied from './../services/interceptor';
 import ROOT_CONSTANT from './../constants/root.js';
 
-axios.interceptors.request.use((config) => {
-    config.headers.token = "Fake token";
-
-    // TODO
-    return config;
-}, error => {
-    return Promise.reject(error);
-});
-
-axios.interceptors.response.use((response) => {
-    if (response.config.parse) {
-        //perform the manipulation here and change the response object
-        // TODO
-    }
-    return response;
-}, error => {
-    return Promise.reject(error);
-});
-
 const getMethod = api => {
-    axios.get(ROOT_CONSTANT.API_ROOT + api).then(res => {
+    axiosConfied.axios.get(ROOT_CONSTANT.API_ROOT + api).then(res => {
         console.log('res', res);
-    });
+    }).catch(err => console.error(err));
 };
 
-const putMethod = (api, data) => {
-    axios.put(api, data).then(res => {
+const putMethod = (api, data = null) => {
+    axiosConfied.axios.put(api, data).then(res => {
         console.log('res', res);
-    });
+    }).catch(err => console.error(err));
 };
 
-const postMethod = (api, data) => {
-    axios.post(api, data).then(res => {
+const postMethod = (api, data = null) => {
+    axiosConfied.axios.post(api, data).then(res => {
         console.log('res', res);
-    });
+    }).catch(err => console.error(err));
 };
 
 const deleteMethod = api => {
-    axios.get(api).then(res => {
+    axiosConfied.axios.get(api).then(res => {
         console.log('res', res);
-    });
+    }).catch(err => console.error(err));
 };
 
 export {
