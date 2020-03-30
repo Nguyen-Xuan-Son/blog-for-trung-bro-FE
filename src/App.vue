@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <GuessComponent msg="Welcome to Your Vue.js App" />
+        <GuessComponent />
     </div>
 </template>
 
