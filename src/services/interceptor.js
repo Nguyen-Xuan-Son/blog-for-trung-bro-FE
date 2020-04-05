@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-axios.interceptors.request.use((config) => {
-    config.headers.token = "Fake token";
+axios.interceptors.request.use(config => {
+    config.headers = {
+        'Content-Type': 'application/json',
+        'Authorization': "Fake token"
+    }
 
     // TODO
     return config;
@@ -9,12 +12,12 @@ axios.interceptors.request.use((config) => {
     return Promise.reject(error);
 });
 
-axios.interceptors.response.use((response) => {
+axios.interceptors.response.use(response => {
     if (response.config.parse) {
         //perform the manipulation here and change the response object
         // TODO
     }
-    return response;
+    return response.data;
 }, error => {
     return Promise.reject(error);
 });

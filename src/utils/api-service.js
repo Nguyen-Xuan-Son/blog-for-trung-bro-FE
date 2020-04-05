@@ -2,27 +2,19 @@ import axiosConfied from './../services/interceptor';
 import ROOT_CONSTANT from './../constants/root.js';
 
 const getMethod = api => {
-    axiosConfied.get(ROOT_CONSTANT.API_ROOT + api).then(res => {
-        console.log('res', res);
-    }).catch(err => console.error(err));
+    return axiosConfied.get(ROOT_CONSTANT.API_ROOT + api);
 };
 
 const putMethod = (api, data = null) => {
-    axiosConfied.put(api, data).then(res => {
-        console.log('res', res);
-    }).catch(err => console.error(err));
+    return axiosConfied.put(ROOT_CONSTANT.API_ROOT + api, JSON.stringify(data));
 };
 
 const postMethod = (api, data = null) => {
-    axiosConfied.post(api, data).then(res => {
-        console.log('res', res);
-    }).catch(err => console.error(err));
+    return axiosConfied.post(ROOT_CONSTANT.API_ROOT + api, JSON.stringify(data));
 };
 
 const deleteMethod = api => {
-    axiosConfied.get(api).then(res => {
-        console.log('res', res);
-    }).catch(err => console.error(err));
+    return axiosConfied.delete(ROOT_CONSTANT.API_ROOT + api);
 };
 
 export {

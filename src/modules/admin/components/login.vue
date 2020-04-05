@@ -8,6 +8,7 @@
                     class="form-control"
                     id="username_or_email_field"
                     placeholder="Enter username or email"
+                    v-model="usernameOrEmail"
                 />
                 <small class="form-text text-danger">Wrong username, email or password</small>
             </div>
@@ -18,6 +19,7 @@
                     class="form-control"
                     id="password_field"
                     placeholder="Enter password"
+                    v-model="password"
                 />
                 <small class="form-text text-danger">Wrong username, email or password</small>
             </div>
@@ -33,11 +35,25 @@
 </template>
 
 <script>
+import { adminLogin } from "./../services";
+
 export default {
-    props: {},
+    data() {
+        return {
+            usernameOrEmail: "",
+            password: ""
+        }
+    },
     methods: {
         login() {
-            // TODO
+            adminLogin({
+                usernameOrEmail: this.usernameOrEmail,
+                password: this.password
+            }).then(res => {
+                console.log(res);
+            }).catch(err => {
+                console.error(err);
+            });
         }
     }
 };
