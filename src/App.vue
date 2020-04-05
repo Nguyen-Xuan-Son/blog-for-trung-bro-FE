@@ -1,17 +1,13 @@
 <template>
     <div id="app">
-        <GuessComponent />
+        <router-view />
     </div>
 </template>
 
 <script>
-import GuessComponent from "./modules/guess";
 
 export default {
-    name: "App",
-    components: {
-        GuessComponent
-    }
+    name: "App"
 };
 </script>
 
