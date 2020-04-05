@@ -1,8 +1,5 @@
 <template>
-    <div class="container">
-        <h1>Admin</h1>
-        <router-view />
-    </div>
+    <router-view />
 </template>
 
 <script>
