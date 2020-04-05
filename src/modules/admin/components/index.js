@@ -1,7 +1,7 @@
-import AdminComponent from './admin';
-import LoginComponent from './admin';
+import DashboardComponent from './dashboard';
+import LoginComponent from './login';
 
 export default {
-    AdminComponent,
+    DashboardComponent,
     LoginComponent
 }
