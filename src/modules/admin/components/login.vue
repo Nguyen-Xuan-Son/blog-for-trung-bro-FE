@@ -36,7 +36,7 @@
 
 <script>
 import { adminLogin } from "./../services";
-// import { setData } from "./../../../utils/local-storage";
+import { setData } from "./../../../utils/local-storage";
 
 export default {
     data() {
@@ -52,7 +52,7 @@ export default {
                 password: this.password
             }).then(res => {
                 console.log(res);
-                // setData("token", res.token);
+                setData("token", res.token);
             }).catch(err => {
                 console.error(err);
             });
