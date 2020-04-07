@@ -51,8 +51,9 @@ export default {
                 usernameOrEmail: this.usernameOrEmail,
                 password: this.password
             }).then(res => {
-                console.log(res);
-                setData("token", res.token);
+                if (res && res.data) {
+                    setData("token", res.data.token);
+                }
             }).catch(err => {
                 console.error(err);
             });

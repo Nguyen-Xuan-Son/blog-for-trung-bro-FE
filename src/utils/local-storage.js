@@ -3,7 +3,7 @@ const setData = (key, data) => {
         localStorage.setItem(key, JSON.stringify(data));
         const result = localStorage.getItem(key);
         if (key && data && result) {
-            res(JSON.parse(data));
+            res(result);
         }
         res(false);
     });
