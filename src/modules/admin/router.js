@@ -3,9 +3,16 @@ import {
     LoginComponent
 } from "./components";
 
-const adminRoutes = [
-    { path: "", component: DashboardComponent },
-    { path: "login", component: LoginComponent }
+const adminRoutes = [{
+        path: "",
+        name: "dashboard",
+        component: DashboardComponent
+    },
+    {
+        path: "login",
+        name: "login",
+        component: LoginComponent
+    }
 ];
 
 export default adminRoutes;

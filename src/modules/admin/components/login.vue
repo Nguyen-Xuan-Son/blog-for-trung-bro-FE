@@ -52,10 +52,17 @@ export default {
                 password: this.password
             }).then(res => {
                 if (res && res.data) {
-                    setData("token", res.data.token);
+                    this.handleAfterLogin(res.data.token);
                 }
             }).catch(err => {
                 console.error(err);
+            });
+        },
+        handleAfterLogin(data) {
+            setData("token", data).then(res => {
+                if (res) {
+                    this.$router.push('/admin');
+                }
             });
         }
     }
