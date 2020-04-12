@@ -6,12 +6,19 @@ import {
 const adminRoutes = [{
         path: "",
         name: "dashboard",
-        component: DashboardComponent
+        component: DashboardComponent,
+        meta: {
+            requiresAuth: true,
+            title: "Dashboard"
+        }
     },
     {
         path: "login",
         name: "login",
-        component: LoginComponent
+        component: LoginComponent,
+        meta: {
+            title: "Login"
+        }
     }
 ];
 
