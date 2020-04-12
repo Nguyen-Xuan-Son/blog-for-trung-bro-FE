@@ -1,16 +1,19 @@
 import { getData } from "./../utils/local-storage";
 
 const beforeRouteEnterHandle = (to, from, next) => {
-    if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (to.path.indexOf("/admin") !== -1) {
         getData("token").then(res => {
-            if (!res) {
-                next({ path: "/admin/login" });
+            if (res) {
+                next({
+                    path: to.name === "login" ? "/admin" : to.path
+                });
             } else {
-                next();
+                next({
+                    path: "/admin/login"
+                });
             }
         });
     }
-
     next();
 }
 
